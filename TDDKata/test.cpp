@@ -45,9 +45,19 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestMax) {
-		char* expression = "1,2,3,4";
-		int expected = -2;
+	TEST(CalcTest, AddTestParametersUnknow) {
+		char* expression = "1,2,3,1,2,3";
+		int expected = 12;
+
+		Calculator myCalc;
+		int actual = myCalc.Add(expression);
+
+		ASSERT_EQ(expected, actual);
+	}
+
+	TEST(CalcTest, AddTestParametersUnknowComa) {
+		char* expression = "1,2,3,1,2.3";
+		int expected = -1;
 
 		Calculator myCalc;
 		int actual = myCalc.Add(expression);
