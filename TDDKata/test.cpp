@@ -64,3 +64,13 @@
 
 		ASSERT_EQ(expected, actual);
 	}
+
+	TEST(CalcTest, AddTestNewLine) {
+		char* expression = "1\n2";
+		int expected = 3;
+
+		Calculator myCalc;
+		int actual = myCalc.Add(expression);
+
+		ASSERT_EQ(expected, actual);
+	}
