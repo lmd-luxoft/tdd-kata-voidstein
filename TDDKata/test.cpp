@@ -84,3 +84,13 @@
 
 		ASSERT_EQ(expected, actual);
 	}
+
+	TEST(CalcTest, AddTestDefaultDellimiter) {
+		char* expression = "//;1,2;3\n";
+		int expected = 6;
+
+		Calculator myCalc;
+		int actual = myCalc.Add(expression);
+
+		ASSERT_EQ(expected, actual);
+	}
