@@ -6,7 +6,7 @@
 	}
 
 	TEST(CalcTest, AddTestEmpty) {
-		char* expression = "\n";
+		char* expression = "";
 		int expected = 0;
 
 		Calculator myCalc;
@@ -16,7 +16,7 @@
 	}
 
 	TEST(CalcTest, AddTestOne) {
-		char* expression = "1\n";
+		char* expression = "1";
 		int expected = 1;
 
 		Calculator myCalc;
@@ -26,7 +26,7 @@
 	}
 
 	TEST(CalcTest, AddTestTwo) {
-		char* expression = "1,2\n";
+		char* expression = "1,2";
 		int expected = 3;
 
 		Calculator myCalc;
@@ -36,7 +36,7 @@
 	}
 
 	TEST(CalcTest, AddTestComa) {
-		char* expression = "1,2.4\n";
+		char* expression = "1,2.4";
 		int expected = -1;
 
 		Calculator myCalc;
@@ -46,7 +46,7 @@
 	}
 
 	TEST(CalcTest, AddTestMax) {
-		char* expression = "1,2,3,4\n";
+		char* expression = "1,2,3,4";
 		int expected = -2;
 
 		Calculator myCalc;
