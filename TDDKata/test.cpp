@@ -74,3 +74,13 @@
 
 		ASSERT_EQ(expected, actual);
 	}
+
+	TEST(CalcTest, AddTestWrongFormat) {
+		char* expression = "1,\n";
+		int expected = -2;
+
+		Calculator myCalc;
+		int actual = myCalc.Add(expression);
+
+		ASSERT_EQ(expected, actual);
+	}
