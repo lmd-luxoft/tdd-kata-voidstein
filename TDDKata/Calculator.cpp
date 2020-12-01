@@ -24,10 +24,10 @@ int Calculator::Add(char* expression)
             sum += atoi(temp.c_str());
             temp = "";
         }
-        cnt++;
+//        cnt++;
         
-        if (cnt > 5)
-            return -2;
+//       if (cnt > 5)
+//           return -2;
     }
 
     return sum + atoi(temp.c_str());
