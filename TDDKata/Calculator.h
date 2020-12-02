@@ -1,5 +1,7 @@
 #pragma once
 #include <string>
+#include <cstring>
+
 /// <summary>
 /// Class Under test
 /// </summary>

@@ -1,11 +1,8 @@
 #include "pch.h"
 #include "Calculator.h"
-	TEST(TDDKata, TestName) {
-		ASSERT_EQ(1, 1);
-		ASSERT_TRUE(true);
-	}
+#include "TestFixture.h"
 
-	TEST(CalcTest, AddTestEmpty) {
+	TEST_F(TestFixture, AddTestEmpty) {
 		char* expression = "";
 		int expected = 0;
 
@@ -15,7 +12,7 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestOne) {
+	TEST_F(TestFixture, AddTestOne) {
 		char* expression = "1";
 		int expected = 1;
 
@@ -25,7 +22,7 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestTwo) {
+	TEST_F(TestFixture, AddTestTwo) {
 		char* expression = "1,2";
 		int expected = 3;
 
@@ -35,7 +32,7 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestComa) {
+	TEST_F(TestFixture, AddTestComa) {
 		char* expression = "1,2.4";
 		int expected = -1;
 
@@ -45,7 +42,7 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestParametersUnknow) {
+	TEST_F(TestFixture, AddTestParametersUnknow) {
 		char* expression = "1,2,3,1,2,3";
 		int expected = 12;
 
@@ -55,7 +52,7 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestParametersUnknowComa) {
+	TEST_F(TestFixture, AddTestParametersUnknowComa) {
 		char* expression = "1,2,3,1,2.3";
 		int expected = -1;
 
@@ -65,9 +62,9 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestNewLine) {
-		char* expression = "1\n2";
-		int expected = 3;
+	TEST_F(TestFixture, AddTestNewLine) {
+		char* expression = "1\n2,3";
+		int expected = 6;
 
 		Calculator myCalc;
 		int actual = myCalc.Add(expression);
@@ -75,7 +72,7 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestWrongFormat) {
+	TEST_F(TestFixture, AddTestWrongFormat) {
 		char* expression = "1,\n";
 		int expected = -2;
 
@@ -85,8 +82,8 @@
 		ASSERT_EQ(expected, actual);
 	}
 
-	TEST(CalcTest, AddTestDefaultDellimiter) {
-		char* expression = "//;1,2;3\n";
+	TEST_F(TestFixture, AddTestDefaultDellimiter) {
+		char* expression = "//;\n1;2;3\n";
 		int expected = 6;
 
 		Calculator myCalc;
